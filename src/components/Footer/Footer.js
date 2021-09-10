@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 const FooterStyle = styled.div`
   padding: 10rem 0;
+  padding-bottom: 0;
   background-color: var(--deep-dark);
 
   .container {
@@ -25,6 +26,37 @@ const FooterStyle = styled.div`
   .footer__col1__title {
     font-size: 3.5rem;
     margin-bottom: 1rem;
+  }
+  .copyright {
+    background-color: var(--dark-bg);
+    text-align: left;
+    padding: 1rem 0;
+    margin-top: 5rem;
+
+    .para {
+      margin-left: 0;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding-top: 7rem;
+    .container {
+      flex-direction: column;
+      gap: 6rem;
+      & > div {
+        margin-top: 5rem;
+      }
+      .footer__col1 .para {
+        max-width: 100%;
+      }
+    }
+    .copyright {
+      .container {
+        div {
+          margin-top: 0;
+        }
+      }
+    }
   }
 `;
 
@@ -85,6 +117,11 @@ const Footer = () => {
               },
             ]}
           />
+        </div>
+      </div>
+      <div className="copyright">
+        <div className="container">
+          <PText>© 2021 - Glyn Finck</PText>
         </div>
       </div>
     </FooterStyle>

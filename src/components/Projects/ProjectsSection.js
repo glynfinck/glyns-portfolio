@@ -1,12 +1,10 @@
 import React from 'react';
-import SectionTitle from '../Section/SectionTitle';
 import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import projects from '../../assets/data/projects';
-import ProjectItem from './ProjectItem';
 import styled from 'styled-components';
-import Button from '../UI/Button';
+import { SectionTitle, ProjectItem, Button } from '../../components';
 
 SwiperCore.use([Navigation]);
 
@@ -22,7 +20,7 @@ const ProjectsSectionStyle = styled.div`
   .projects__allItems {
     display: flex;
     gap: 3rem;
-    margin-top: 5rem;
+    margin-top: 3rem;
   }
 
   .swiper-container {
@@ -56,7 +54,7 @@ const ProjectsSectionStyle = styled.div`
       flex-direction: column;
       max-width: 400px;
       margin: 0 auto;
-      margin-top: 7rem;
+      margin-top: 5rem;
       gap: 5rem;
     }
   }

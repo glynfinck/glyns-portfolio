@@ -9,7 +9,7 @@ const ButtonStyle = styled.div`
       outline ? 'transparent' : 'var(--gray-1)'};
     padding: 0.7em 2em;
     border-radius: 8px;
-    display: ${({ icon }) => (!!icon ? 'flex' : 'inline-block')};
+    display: inline-flex;
     text-align: center;
     align-content: center;
     align-items: center;
@@ -18,21 +18,23 @@ const ButtonStyle = styled.div`
     gap: 1rem;
 
     .button__textContainer {
-      flex: 0 1 auto;
       color: ${({ outline }) => (outline ? 'var(--gray-1)' : 'var(--dark-bg)')};
       font-size: 1.8rem;
     }
 
     .button__iconContainer {
-      flex: 0 1 auto;
       height: 3rem;
       width: 3rem;
+      svg {
+        fill: ${({ outline }) =>
+          outline ? 'var(--gray-1)' : 'var(--dark-bg)'};
+      }
     }
   }
 
   @media only screen and (max-width: 768px) {
-    .button {
-      font-size: 1.4rem;
+    .button__textContainer {
+      font-size: 1.3rem;
     }
   }
 `;

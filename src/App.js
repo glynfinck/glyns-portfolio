@@ -1,6 +1,6 @@
 import { Redirect, Route, Switch, BrowserRouter } from 'react-router-dom';
 import { NavMenu, Footer } from './components';
-import { HomePage, ProjectsPage, ContactPage, ResumePage } from './pages';
+import { HomePage, ProjectsPage, ContactPage, AboutPage } from './pages';
 
 export default function App() {
   return (
@@ -13,11 +13,11 @@ export default function App() {
         <Route path="/home" exact>
           <HomePage />
         </Route>
+        <Route path="/about" exact>
+          <AboutPage />
+        </Route>
         <Route path="/projects" exact>
           <ProjectsPage />
-        </Route>
-        <Route path="/resume" exact>
-          <ResumePage />
         </Route>
         <Route path="/contact" exact>
           <ContactPage />

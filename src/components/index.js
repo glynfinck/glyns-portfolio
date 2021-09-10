@@ -1,7 +1,14 @@
 export { default as NavMenu } from './NavMenu/NavMenu';
 export { default as WelcomeSection } from './WelcomeSection/WelcomeSection';
 export { default as IntroductionSection } from './IntroductionSection/IntroductionSection';
-export { default as ProjectsSection } from './ProjectsSection/ProjectsSection';
+export { default as ProjectsSection } from './Projects/ProjectsSection';
 export { default as ResumeSection } from './ResumeSection/ResumeSection';
-export { default as ContactBanner } from './ContactBanner/ContactBanner';
+export { default as ContactBanner } from './Contact/ContactBanner';
 export { default as Footer } from './Footer/Footer';
+export { default as AboutInfoItem } from './About/AboutInfoItem';
+export { default as Button } from './UI/Button';
+export { default as PText } from './Section/PText';
+export { default as ProjectItem } from './Projects/ProjectItem';
+export { default as SectionTitle } from './Section/SectionTitle';
+export { default as ContactInfoItem } from './Contact/ContactInfoItem';
+export { default as ContactForm } from './Contact/ContactForm';

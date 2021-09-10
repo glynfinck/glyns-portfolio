@@ -133,6 +133,18 @@ const NavMenu = () => {
         </li>
         <li>
           <NavLink
+            to="/about"
+            exact
+            onClick={handleToggleMenu}
+            role="button"
+            onKeyDown={handleToggleMenu}
+            tabIndex={0}
+          >
+            About
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
             to="/projects"
             exact
             onClick={handleToggleMenu}
@@ -141,18 +153,6 @@ const NavMenu = () => {
             tabIndex={0}
           >
             Projects
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/resume"
-            exact
-            onClick={handleToggleMenu}
-            role="button"
-            onKeyDown={handleToggleMenu}
-            tabIndex={0}
-          >
-            Resume
           </NavLink>
         </li>
         <li>
