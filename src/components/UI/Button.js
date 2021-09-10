@@ -19,7 +19,7 @@ const ButtonStyle = styled.div`
 
     .button__textContainer {
       color: ${({ outline }) => (outline ? 'var(--gray-1)' : 'var(--dark-bg)')};
-      font-size: 1.8rem;
+      font-size: 1.6rem;
     }
 
     .button__iconContainer {
@@ -34,7 +34,7 @@ const ButtonStyle = styled.div`
 
   @media only screen and (max-width: 768px) {
     .button__textContainer {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
     }
   }
 `;

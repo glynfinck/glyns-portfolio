@@ -71,11 +71,18 @@ const ProjectItemStyle = styled.div`
   }
 
   @media only screen and (max-width: 950px) {
-    .projectItem__buttons {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 0rem;
+    .projectItem__info {
+      .projectItem__buttons {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0rem;
+        .button {
+          .button__textContainer {
+            font-size: 1.6rem;
+          }
+        }
+      }
     }
   }
 `;
