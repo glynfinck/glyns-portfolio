@@ -28,6 +28,17 @@ const ContactInfoStyle = styled.div`
   a {
     font-size: 2rem;
   }
+
+  @media only screen and (max-width: 768px) {
+    .contactIcon {
+      svg {
+        width: 2rem;
+      }
+    }
+    a {
+      font-size: 1.4rem;
+    }
+  }
 `;
 
 const ContactInfoItem = ({

@@ -33,7 +33,7 @@ const ContactFormStyle = styled.form`
   .invalid input,
   .invalid textarea {
     border: 1px solid #b40e0e;
-    background-color: #fddddd;
+    background-color: #bf9f9f;
   }
 
   .invalid input:focus,
@@ -44,11 +44,27 @@ const ContactFormStyle = styled.form`
   .form-control .error-text {
     padding-top: 1rem;
     font-size: 1.8rem;
-    color: #b40e0e;
+    color: red;
   }
 
   .error-message {
     color: red;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .form-control {
+      label {
+        font-size: 1.4rem;
+      }
+      input,
+      textarea {
+        font-size: 1.6rem;
+        padding: 1rem;
+      }
+      .error-text {
+        font-size: 1.4rem;
+      }
+    }
   }
 `;
 
