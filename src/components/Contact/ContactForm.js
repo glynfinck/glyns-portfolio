@@ -3,41 +3,47 @@ import styled from 'styled-components';
 import ButtonSubmit from '../UI/ButtonSubmit';
 import useInput from '../../hooks/use-input';
 
-const ContactFormStyle = styled.div`
-  form {
-    .form-control {
-      display: flex;
-      flex-direction: column;
-      padding: 1rem 0;
-      font-size: 1.5rem;
-      label {
-        padding-bottom: 1rem;
-      }
-      input,
-      textarea {
-        background-color: var(--deep-dark);
-        padding: 1rem;
-        border-radius: 8px;
-        outline: none;
-        border: 1px solid var(--deep-dark);
-      }
-      textarea {
-        resize: none;
-      }
+const ContactFormStyle = styled.form`
+  width: 100%;
+  .form-control {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 2rem;
+    label {
+      font-size: 1.8rem;
+      padding-bottom: 1rem;
+    }
+    input,
+    textarea {
+      width: 100%;
+      font-size: 2rem;
+      background-color: var(--deep-dark);
+      padding: 1.2rem;
+      border-radius: 8px;
+      outline: none;
+      border: 1px solid var(--deep-dark);
+    }
+    textarea {
+      min-height: 250px;
+      resize: none;
     }
   }
 
-  .invalid input {
+  .invalid input,
+  .invalid textarea {
     border: 1px solid #b40e0e;
     background-color: #fddddd;
   }
 
   .invalid input:focus,
   .invalid textarea:focus {
-    background-color: var(--gray-2);
+    background-color: var(--deep-dark);
   }
 
   .form-control .error-text {
+    padding-top: 1rem;
+    font-size: 1.8rem;
     color: #b40e0e;
   }
 
@@ -112,44 +118,40 @@ const ContactForm = () => {
   };
 
   return (
-    <ContactFormStyle>
-      <form onSubmit={onSubmitFormHandler}>
-        <div className={nameClass}>
-          <label>Name</label>
-          <input
-            type="text"
-            value={nameValue}
-            onChange={nameChangedHandler}
-            onBlur={nameBlurHandler}
-          />
-          {nameValueHasError && <p className="error-text">Enter a name</p>}
-        </div>
-        <div className={emailClass}>
-          <label>E-mail</label>
-          <input
-            type="text"
-            value={emailValue}
-            onChange={emailChangedHandler}
-            onBlur={emailBlurHandler}
-          />
-          {emailValueHasError && (
-            <p className="error-text">Enter a valid email</p>
-          )}
-        </div>
-        <div className={messageClass}>
-          <label>Message</label>
-          <textarea
-            rows={10}
-            value={messageValue}
-            onChange={messageChangedHandler}
-            onBlur={messageBlurHandler}
-          />
-          {messageValueHasError && (
-            <p className="error-text">Enter a message</p>
-          )}
-        </div>
-        <ButtonSubmit text="Send" />
-      </form>
+    <ContactFormStyle onSubmit={onSubmitFormHandler}>
+      <div className={nameClass}>
+        <label>Name</label>
+        <input
+          type="text"
+          value={nameValue}
+          onChange={nameChangedHandler}
+          onBlur={nameBlurHandler}
+        />
+        {nameValueHasError && <p className="error-text">Enter a name</p>}
+      </div>
+      <div className={emailClass}>
+        <label>E-mail</label>
+        <input
+          type="text"
+          value={emailValue}
+          onChange={emailChangedHandler}
+          onBlur={emailBlurHandler}
+        />
+        {emailValueHasError && (
+          <p className="error-text">Enter a valid email</p>
+        )}
+      </div>
+      <div className={messageClass}>
+        <label>Message</label>
+        <textarea
+          rows={10}
+          value={messageValue}
+          onChange={messageChangedHandler}
+          onBlur={messageBlurHandler}
+        />
+        {messageValueHasError && <p className="error-text">Enter a message</p>}
+      </div>
+      <ButtonSubmit text="Send" />
     </ContactFormStyle>
   );
 };

@@ -3,28 +3,30 @@ import styled from 'styled-components';
 import { MdPhone } from 'react-icons/md';
 
 const ContactInfoStyle = styled.div`
-  display: flex;
+  display: inline-flex;
   align-content: center;
   align-items: center;
+  justify-content: left;
   background-color: var(--deep-dark);
-  margin: 1.8rem 0;
+  gap: 2rem;
+  padding: 2rem;
   border-radius: 8px;
 
   .contactIcon {
     display: flex;
-    background-color: var(--gray-1);
-    margin: 1rem;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background-color: var(--gray-2);
     border-radius: 50%;
-    width: 4rem;
-    padding: 0.75rem;
-    path {
-      color: var(--white);
+    padding: 1.3rem;
+    svg {
+      width: 3.5rem;
     }
   }
 
   a {
-    padding-left: 1rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 `;
 
