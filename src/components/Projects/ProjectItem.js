@@ -9,15 +9,14 @@ const ProjectItemStyle = styled.div`
   height: 100%;
 
   .projectItem__img {
-    width: 100%;
-    height: 400px;
     overflow: hidden;
+    height: 400px;
     border-radius: 12px;
-    display: inline-block;
+    display: inline-flex;
     border: 3px solid var(--gray-2);
 
     img {
-      height: 100%;
+      margin: auto;
     }
   }
 
