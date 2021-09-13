@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ButtonSubmitStyle = styled.div`
-  margin-top: 2rem;
   button {
     background-color: var(--gray-1);
     padding: 0.7em 2em;

@@ -12,11 +12,11 @@ const ProjectItemStyle = styled.div`
     overflow: hidden;
     height: 400px;
     border-radius: 12px;
-    display: inline-flex;
+    display: flex;
     border: 3px solid var(--gray-2);
 
     img {
-      margin: auto;
+      height: 100%;
     }
   }
 
@@ -28,6 +28,7 @@ const ProjectItemStyle = styled.div`
     background-color: var(--deep-dark);
     padding: 1rem;
     border-radius: 12px;
+    width: 100%;
 
     .projectItem__title {
       font-size: 2.3rem;

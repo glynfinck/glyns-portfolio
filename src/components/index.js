@@ -12,5 +12,4 @@ export { default as ProjectItem } from './Projects/ProjectItem';
 export { default as SectionTitle } from './Section/SectionTitle';
 export { default as ContactInfoItem } from './Contact/ContactInfoItem';
 export { default as ContactForm } from './Contact/ContactForm';
-export { default as ScrollToTop } from './Scroll/ScrollToTop';
 export { default as SmoothScroll } from './Scroll/SmoothScroll';

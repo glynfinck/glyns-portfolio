@@ -1,5 +1,5 @@
 import { Redirect, Route, Switch, BrowserRouter } from 'react-router-dom';
-import { NavMenu, Footer, ScrollToTop, SmoothScroll } from './components';
+import { NavMenu, Footer, SmoothScroll } from './components';
 import { HomePage, ProjectsPage, ContactPage, AboutPage } from './pages';
 
 export default function App() {

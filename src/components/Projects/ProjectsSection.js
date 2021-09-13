@@ -79,10 +79,16 @@ const ProjectsSection = () => {
                 slidesPerView: 1,
               },
               768: {
-                slidesPerView: 2,
+                slidesPerView:
+                  projects.slice(0, 5).length > 1
+                    ? 2
+                    : projects.slice(0, 5).length,
               },
               1200: {
-                slidesPerView: 3,
+                slidesPerView:
+                  projects.slice(0, 5).length > 2
+                    ? 3
+                    : projects.slice(0, 5).length,
               },
             }}
           >

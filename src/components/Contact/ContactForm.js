@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ButtonSubmit from '../UI/ButtonSubmit';
 import useInput from '../../hooks/use-input';
+import emailjs from 'emailjs-com';
 
 const ContactFormStyle = styled.form`
   width: 100%;
@@ -51,6 +52,24 @@ const ContactFormStyle = styled.form`
     color: red;
   }
 
+  .form-button-group {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    gap: 2rem;
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    .hidden {
+      color: transparent;
+      transition: all 0.4s ease;
+    }
+  }
+
   @media only screen and (max-width: 768px) {
     .form-control {
       label {
@@ -72,7 +91,12 @@ function validateEmail(email) {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
+
 const ContactForm = () => {
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
   const {
     value: nameValue,
     isValid: isNameValid,
@@ -118,15 +142,45 @@ const ContactForm = () => {
   const onSubmitFormHandler = (event) => {
     event.preventDefault();
 
+    setHasSubmitted(true);
+    setIsSubmitting(true);
     nameSubmitFormHandler();
     emailSubmitFormHandler();
     messageSubmitFormHandler();
 
-    if (!isFormValid) return;
+    if (!isFormValid) {
+      setHasSubmitted(false);
+      setIsSubmitting(false);
+      return;
+    }
 
     console.log(nameValue);
     console.log(emailValue);
     console.log(messageValue);
+
+    emailjs
+      .sendForm(
+        'gmail',
+        'my_template',
+        event.target,
+        'user_aYbgmz1tckkSqrhf7HpHs'
+      )
+      .then(
+        (result) => {
+          if (result.status === 200) {
+            setIsSubmitting(false);
+            setIsSuccess(true);
+          }
+        },
+        (error) => {
+          setIsSubmitting(false);
+          setIsSuccess(false);
+        }
+      );
+
+    setTimeout(() => {
+      setHasSubmitted(false);
+    }, 4000);
 
     resetNameHandler();
     resetEmailHandler();
@@ -139,6 +193,7 @@ const ContactForm = () => {
         <label>Name</label>
         <input
           type="text"
+          name="name"
           value={nameValue}
           onChange={nameChangedHandler}
           onBlur={nameBlurHandler}
@@ -149,6 +204,7 @@ const ContactForm = () => {
         <label>E-mail</label>
         <input
           type="text"
+          name="email"
           value={emailValue}
           onChange={emailChangedHandler}
           onBlur={emailBlurHandler}
@@ -160,6 +216,7 @@ const ContactForm = () => {
       <div className={messageClass}>
         <label>Message</label>
         <textarea
+          name="message"
           rows={10}
           value={messageValue}
           onChange={messageChangedHandler}
@@ -167,7 +224,20 @@ const ContactForm = () => {
         />
         {messageValueHasError && <p className="error-text">Enter a message</p>}
       </div>
-      <ButtonSubmit text="Send" />
+      <div className="form-button-group">
+        <ButtonSubmit text="Send" />
+        {isSubmitting && (
+          <p className={hasSubmitted ? '' : 'hidden'}>Sending message...</p>
+        )}
+        {isSuccess && !isSubmitting && (
+          <p className={hasSubmitted ? '' : 'hidden'}>Message sent!</p>
+        )}
+        {!isSuccess && !isSubmitting && (
+          <p className={hasSubmitted ? '' : 'hidden'}>
+            Message failed to send!
+          </p>
+        )}
+      </div>
     </ContactFormStyle>
   );
 };
