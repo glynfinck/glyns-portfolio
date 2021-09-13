@@ -2,7 +2,7 @@ import React from 'react';
 import SectionTitle from '../Section/SectionTitle';
 import PText from '../Section/PText';
 import Button from '../UI/Button';
-import AboutImg from '../../assets/images/placeholder-profile.jpeg';
+import AboutImg from '../../assets/images/profile.jpg';
 import styled from 'styled-components';
 
 const IntroductionSectionStyle = styled.div`
@@ -19,6 +19,10 @@ const IntroductionSectionStyle = styled.div`
   .introSection__right {
     padding-left: 2rem;
     flex: 1;
+
+    img {
+      border-radius: 1rem;
+    }
   }
   .section-title {
     text-align: left;
