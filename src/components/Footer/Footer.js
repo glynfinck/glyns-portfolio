@@ -67,10 +67,10 @@ const Footer = () => {
         <div className="footer__col1">
           <h1 className="footer__col1__title">Glyn Finck</h1>
           <PText>
-            Officia magna sunt amet ullamco ex ipsum ut id. Exercitation nulla
-            exercitation ut veniam aliqua consectetur voluptate qui labore
-            consequat pariatur quis. Cillum officia labore reprehenderit
-            eiusmod.
+            I am an aspiring software engineer from Vancouver, BC. I love to
+            build cool projects that have a unique application and intuitive
+            design. Solving tough problems is something that I am very
+            passionate about.
           </PText>
         </div>
         <div className="footer__col2">

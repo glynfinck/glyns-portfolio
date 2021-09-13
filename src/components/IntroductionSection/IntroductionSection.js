@@ -85,12 +85,13 @@ const IntroductionSection = () => {
         <div className="introSection__left">
           <SectionTitle subtitle="Hello, my name is" title="Glyn Finck" />
           <PText>
-            Aliquip laboris amet dolor ut proident id. Exercitation et excepteur
-            commodo enim eiusmod enim irure labore esse occaecat fugiat.
+            I am an aspiring software engineer and love to solve complex
+            problems. Learning new technologies and building projects is my
+            passion. More than anything, I like to build cool stuff.
           </PText>
           <div className="introSection__buttons">
-            <Button to="/projects" text="Projects" />
-            <Button outline to="/contact" text="Contact" />
+            <Button to="/projects" text="Projects" type="link" />
+            <Button outline to="/contact" text="Contact" type="link" />
           </div>
         </div>
         <div className="introSection__right">

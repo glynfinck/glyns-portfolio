@@ -39,20 +39,50 @@ const ButtonStyle = styled.div`
   }
 `;
 
-const Button = ({ text, icon, outline, to, external }) => {
-  return (
-    <ButtonStyle outline={outline} icon={icon} className="button-wrapper">
-      {external ? (
-        <a className="button" href={to} role="button">
-          <div className="button__textContainer">{text}</div>
-          {!!icon && <div className="button__iconContainer">{icon}</div>}
-        </a>
-      ) : (
+const Button = ({ text, icon, outline, to, type = 'a', download }) => {
+  let button = (
+    <a className="button" href={to} role="button">
+      <div className="button__textContainer">{text}</div>
+      {!!icon && <div className="button__iconContainer">{icon}</div>}
+    </a>
+  );
+
+  switch (type) {
+    case 'link':
+      button = (
         <Link className="button" to={to} role="button">
           <div className="button__textContainer">{text}</div>
           {!!icon && <div className="button__iconContainer">{icon}</div>}
         </Link>
-      )}
+      );
+      break;
+    case 'a':
+      button = (
+        <a className="button" href={to} role="button">
+          <div className="button__textContainer">{text}</div>
+          {!!icon && <div className="button__iconContainer">{icon}</div>}
+        </a>
+      );
+      break;
+    case 'download':
+      button = (
+        <a className="button" href={to} role="button" download={download}>
+          <div className="button__textContainer">{text}</div>
+          {!!icon && <div className="button__iconContainer">{icon}</div>}
+        </a>
+      );
+      break;
+    default:
+      button = (
+        <a className="button" href={to} role="button">
+          <div className="button__textContainer">{text}</div>
+          {!!icon && <div className="button__iconContainer">{icon}</div>}
+        </a>
+      );
+  }
+  return (
+    <ButtonStyle outline={outline} icon={icon} className="button-wrapper">
+      {button}
     </ButtonStyle>
   );
 };

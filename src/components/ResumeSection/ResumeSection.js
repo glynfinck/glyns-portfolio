@@ -3,6 +3,7 @@ import SectionTitle from '../Section/SectionTitle';
 import Button from '../UI/Button';
 import { MdFileDownload } from 'react-icons/md';
 import styled from 'styled-components';
+import resumeFile from '../../assets/files/GlynResume2021.pdf';
 
 const ResumeSectionStyle = styled.div`
   padding: 10rem 0;
@@ -25,8 +26,10 @@ const ResumeSection = () => {
       <div className="resume__downloadButton">
         <Button
           outline
-          to="files/GlynResume2021.pdf"
+          to={resumeFile}
           text="Download Resume"
+          type="download"
+          download="GlynResume2021"
           icon={<MdFileDownload />}
         />
       </div>

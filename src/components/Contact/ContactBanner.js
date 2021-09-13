@@ -33,7 +33,7 @@ const ContactBanner = () => {
         <div className="contactBanner__wrapper">
           <PText>Have a project in mind</PText>
           <h3 className="contactBanner__heading">Let me help you</h3>
-          <Button to="/contact" text="Contact Me" />
+          <Button to="/contact" text="Contact Me" type="link" />
         </div>
       </div>
     </ContactBannerStyle>

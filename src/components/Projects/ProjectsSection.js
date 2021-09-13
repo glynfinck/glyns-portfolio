@@ -66,7 +66,7 @@ const ProjectsSection = () => {
       <div className="container">
         <SectionTitle subtitle="some of my recent projects" title="Projects" />
         <div className="projects__seeAllButton">
-          <Button to="/projects" text="See All Projects" outline />
+          <Button to="/projects" text="See All Projects" outline type="link" />
         </div>
         <div className="projects__allItems">
           <Swiper

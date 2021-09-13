@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { MdFileDownload } from 'react-icons/md';
 import { PText, Button } from '../components';
+import resumeFile from '../assets/files/GlynResume2021.pdf';
 
 const AboutPageStyle = styled.div`
   display: flex;
@@ -54,37 +55,47 @@ const AboutPage = () => {
   return (
     <AboutPageStyle>
       <div className="container">
-        <p className="about__subheading">
-          Hello, my name is Glyn Finck and I am an aspiring
-        </p>
-        <h2 className="about__heading">Software Engineer</h2>
+        <p className="about__subheading">A little more about</p>
+        <h2 className="about__heading">Glyn Finck</h2>
         <div className="about__info">
           <PText>
-            Dolor irure do in labore ea laborum ullamco laborum ipsum enim aute
-            laborum. Sunt aliqua aliqua aute irure officia elit ad nulla dolore
-            excepteur qui. Cupidatat sint veniam reprehenderit reprehenderit sit
-            magna irure ipsum laborum occaecat occaecat ad occaecat. Qui aliqua
-            cillum esse elit. Laborum id et est esse eiusmod consectetur eu sunt
-            nulla velit dolore cillum Lorem.
-            <br />
-            <br />
-            Sunt exercitation non fugiat aliquip incididunt sit non incididunt
-            mollit adipisicing. Nostrud nostrud cupidatat enim non et nisi elit
-            dolore anim. Non nisi consectetur enim mollit aliquip sunt. Minim
-            voluptate dolor nostrud cupidatat esse. Laborum proident enim quis
-            amet amet veniam velit non non enim dolor dolor. Eiusmod excepteur
-            cupidatat et enim pariatur consequat qui.
-            <br />
-            <br />
-            Occaecat do dolor non dolor culpa Lorem ad ullamco ut elit nulla
-            elit magna. Occaecat sit ullamco occaecat excepteur aliquip pariatur
-            magna deserunt dolore qui ad tempor et. Exercitation ipsum est
-            consectetur proident aliquip esse sunt ex eu nostrud ad cupidatat
-            labore ipsum. Nulla nisi quis officia sint. Duis ad non cillum est
-            commodo velit.
+            I grew up in Vancouver, Canada and I learned early on to appreciate
+            the beauty of the city I lived in. Whether it be skiing up at
+            Whistler or boating in the Howe sound I always loved to get outdoors
+            and enjoy the picturesque scenery here.
+            <br /> <br />
+            During attending high school at Rockridge Secondary I found my
+            passion for Mathematics and Science which would later lead to my
+            interest in Engineering. Although I knew I was deeply interested in
+            the subjects of Mathematics and Science during high school, it
+            wasn’t until university that I got my first exposure to Software
+            Engineering taking an introductory course in C at the University of
+            Victoria. I immediately fell in love with programming, finding it
+            hard to put the computer down at times and take a break.
+            <br /> <br />
+            After this I knew that I was interested in programming and software
+            engineering but remained passionate about the other faculties of
+            engineering. Because of this I decided to transfer into Engineering
+            Physics at the University of British Columbia. Throughout my degree
+            I continued to narrow my interests through taking technical
+            electives within my program and ultimately solidified my interest in
+            Software Engineering.
+            <br /> <br />
+            My experience related to the Software comes from a mix of courses
+            that I have taken as well as through teaching myself new
+            technologies. This experience is highlighted in the personal
+            projects found on this website and through some of my past roles.
+            <br /> <br />I thank you for reading through all of this and hope
+            that you’ve learned a little bit more about me.
           </PText>
         </div>
-        <Button text="Download Resume" icon={<MdFileDownload />} to="#" />
+        <Button
+          text="Download Resume"
+          icon={<MdFileDownload />}
+          to={resumeFile}
+          type="download"
+          download="GlynsResume2021"
+        />
       </div>
     </AboutPageStyle>
   );

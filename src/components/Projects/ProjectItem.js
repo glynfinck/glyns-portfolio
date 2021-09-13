@@ -99,8 +99,8 @@ const ProjectItem = ({ img, name, desc, technologies, live, code }) => {
         </Link>
         <p className="projectItem__desc">{desc}</p>
         <div className="projectItem__buttons">
-          <Button to={live} external text="Live Preview" />
-          <Button to={code} external text="Source Code" />
+          <Button to={live} type="a" text="Live Preview" />
+          <Button to={code} type="a" text="Source Code" />
         </div>
       </div>
     </ProjectItemStyle>
