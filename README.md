@@ -1,6 +1,6 @@
 # Glyn's Portfolio
 
-Information on how I created my portfolio website found at https://glynfinck.ca
+Information on how I created my portfolio website found at https://www.glynfinck.ca
 
 ## Table of Contents
 
